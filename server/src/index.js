@@ -14,6 +14,9 @@ const informeFinalCamadaRoutes = require("./routes/informeFinalCamadaRoutes");
 const app = express();
 const configuredPort = Number(process.env.PORT || 3001);
 
+// Necesario en hosting con proxy (Render, Railway, Nginx) para rate-limit y cabeceras.
+app.set("trust proxy", Number(process.env.TRUST_PROXY || 1));
+
 app.use(
   cors({
     origin: process.env.CLIENT_ORIGIN || true,
@@ -48,6 +51,14 @@ app.use("/api/informes-finales-camada", requireAuth, informeFinalCamadaRoutes);
 
 app.get("/", (req, res) => {
   res.send("Hello from the server!");
+});
+
+app.get("/health", (req, res) => {
+  res.status(200).json({
+    status: "ok",
+    service: "app_web_pollos_de_engorde_api",
+    timestamp: new Date().toISOString(),
+  });
 });
 
 const startServer = (initialPort) => {

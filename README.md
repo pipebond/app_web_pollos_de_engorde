@@ -88,3 +88,70 @@ This project is a web application for managing the fattening of chickens, built 
 - `npm run build`: Builds the app for production.
 - `npm test`: Runs the test suite.
 - `npm run eject`: Ejects the app from `create-react-app`.
+
+## Production Deployment
+
+This repository is ready for hosting, but you must set production environment variables.
+
+### 1. Environment Variables
+
+Use these templates:
+
+- `server/.env.example`
+- `client/.env.example`
+
+Minimum required in production:
+
+- Backend (`server/.env`):
+  - `PORT`
+  - `DB_HOST`
+  - `DB_PORT`
+  - `DB_USER`
+  - `DB_PASSWORD`
+  - `DB_NAME`
+  - `JWT_SECRET`
+  - `CLIENT_ORIGIN`
+- Frontend (`client/.env.production`):
+  - `REACT_APP_API_URL`
+
+### 2. Backend Healthcheck
+
+The API exposes:
+
+- `GET /health`
+
+Use it in hosting health checks.
+
+### 3. Recommended Hosting Split
+
+- Backend: Render/Railway/Fly.io/VPS as a Node service.
+- Frontend: Netlify/Vercel/Render Static Site serving `client/build`.
+
+### 4. Build and Run Commands
+
+- Backend install: `npm --prefix server install`
+- Backend start: `npm --prefix server start`
+- Frontend install: `npm --prefix client install`
+- Frontend build: `npm --prefix client run build`
+
+### 5. Render Example (Simple)
+
+1. Create a **Web Service** from this repo for backend.
+1. Set root directory to `server`.
+1. Build command: `npm install`
+1. Start command: `npm start`
+1. Add backend env vars from `server/.env.example`.
+1. Create a **Static Site** from this repo for frontend.
+1. Set root directory to `client`.
+1. Build command: `npm run build`
+1. Publish directory: `build`
+1. Add `REACT_APP_API_URL` with backend public URL.
+1. Set backend `CLIENT_ORIGIN` to frontend public URL.
+
+### 6. Final Pre-Go-Live Checklist
+
+- `JWT_SECRET` is strong and private.
+- Database user has only required permissions.
+- CORS is restricted to frontend domain.
+- Frontend can login and call backend without mixed-content errors.
+- `GET /health` returns `200`.
