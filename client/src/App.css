@@ -1,0 +1,15 @@
+.app-contenedor {
+  min-height: 100vh;
+  width: min(100%, 1600px);
+  margin: 0 auto;
+  padding: clamp(12px, 2vw, 28px);
+  display: flex;
+  flex-direction: column;
+  gap: clamp(10px, 1.2vw, 20px);
+}
+
+@media (min-width: 2500px) {
+  .app-contenedor {
+    width: min(100%, 1880px);
+  }
+}

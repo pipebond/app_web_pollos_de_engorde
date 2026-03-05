@@ -1,0 +1,169 @@
+/* Modulo de cierre final de camada con almacenamiento y comparacion. */
+.informe-final-bloque {
+  margin-top: 20px;
+  border: 1px solid #e7c690;
+  border-radius: 16px;
+  background: #fffaf1;
+  padding: 16px;
+}
+
+.informe-final-cabecera h3 {
+  margin: 0;
+  color: #2f1b12;
+}
+
+.informe-final-cabecera p {
+  margin: 8px 0 0;
+  color: #624635;
+}
+
+.informe-final-etiqueta {
+  display: inline-block;
+  margin: 0 0 8px;
+  background: #ffedc9;
+  color: #7a3f18;
+  border-radius: 999px;
+  padding: 5px 10px;
+  font-size: 0.76rem;
+  text-transform: uppercase;
+  font-weight: 700;
+}
+
+.informe-final-acciones-superiores {
+  margin-top: 12px;
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 8px;
+}
+
+.informe-final-acciones-superiores select,
+.informe-final-acciones-superiores input,
+.informe-final-preview textarea,
+.informe-final-comparacion-selectores select {
+  border: 1px solid #e3c197;
+  border-radius: 10px;
+  min-height: 42px;
+  padding: 8px 10px;
+  background: #fffdfa;
+}
+
+.informe-final-btn,
+.informe-final-btn-eliminar {
+  border: none;
+  border-radius: 10px;
+  min-height: 42px;
+  padding: 0 14px;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.informe-final-btn {
+  color: #fff;
+  background: linear-gradient(120deg, #d67a2a 0%, #b34d17 100%);
+}
+
+.informe-final-btn-secundario {
+  color: #6f421f;
+  background: #fde8c4;
+}
+
+.informe-final-botones-superiores {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 10px;
+}
+
+.informe-final-btn-eliminar {
+  color: #7f2618;
+  background: #f5d2cb;
+}
+
+.informe-final-preview {
+  margin-top: 14px;
+  border: 1px solid #ead2aa;
+  border-radius: 12px;
+  padding: 12px;
+  background: #fffdf8;
+  display: grid;
+  gap: 10px;
+}
+
+.informe-final-preview h4,
+.informe-final-historial h4,
+.informe-final-comparacion h4 {
+  margin: 0;
+  color: #3d2518;
+}
+
+.informe-final-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 8px;
+}
+
+.informe-final-grid article {
+  border: 1px dashed #ebd5b3;
+  border-radius: 8px;
+  padding: 8px;
+  color: #523828;
+}
+
+.informe-final-historial,
+.informe-final-comparacion {
+  margin-top: 14px;
+}
+
+.informe-final-tabla-scroll {
+  overflow-x: auto;
+}
+
+.informe-final-tabla,
+.informe-final-comparacion-tabla table {
+  width: 100%;
+  min-width: 720px;
+  border-collapse: collapse;
+}
+
+.informe-final-tabla th,
+.informe-final-tabla td,
+.informe-final-comparacion-tabla th,
+.informe-final-comparacion-tabla td {
+  border-bottom: 1px solid #ead8be;
+  padding: 8px;
+  text-align: left;
+}
+
+.informe-final-tabla th,
+.informe-final-comparacion-tabla th {
+  background: #fff0d5;
+  color: #5f3a1f;
+}
+
+.informe-final-comparacion-selectores {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 10px;
+  margin: 10px 0;
+}
+
+.informe-final-mensaje {
+  margin: 12px 0 0;
+  padding: 10px;
+  border-radius: 10px;
+  background: #fff2dc;
+  color: #6d401d;
+}
+
+@media (max-width: 860px) {
+  .informe-final-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .informe-final-comparacion-selectores {
+    grid-template-columns: 1fr;
+  }
+
+  .informe-final-botones-superiores {
+    grid-template-columns: 1fr;
+  }
+}

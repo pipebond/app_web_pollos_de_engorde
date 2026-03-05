@@ -1,0 +1,72 @@
+/* Dashboard global mostrado en todas las interfaces de la app. */
+.dashboard-pollos {
+  background: linear-gradient(120deg, #fff4dc 0%, #ffe4b5 100%);
+  border: 1px solid #eecb93;
+  border-radius: 18px;
+  padding: 16px;
+  margin-bottom: 14px;
+  box-shadow: 0 10px 24px rgba(133, 66, 23, 0.15);
+}
+
+.dashboard-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 10px;
+}
+
+.dashboard-item {
+  background: #fff9ee;
+  border: 1px solid #f0d8b1;
+  border-radius: 12px;
+  padding: 10px;
+}
+
+.dashboard-item h3 {
+  margin: 0 0 6px;
+  font-size: 0.8rem;
+  color: #694126;
+  text-transform: uppercase;
+}
+
+.dashboard-item p {
+  margin: 0;
+  font-size: 1rem;
+  font-weight: 700;
+  color: #2f1d13;
+}
+
+.dashboard-ultimo-registro {
+  margin-top: 12px;
+  background: #fff8ea;
+  border: 1px dashed #e4c388;
+  border-radius: 12px;
+  padding: 10px;
+}
+
+.dashboard-ultimo-registro h4 {
+  margin: 0 0 6px;
+  color: #4a2e1d;
+}
+
+.dashboard-ultimo-registro p {
+  margin: 0;
+  color: #5e3d29;
+}
+
+.dashboard-error {
+  margin: 10px 0 0;
+  color: #9a2e14;
+  font-weight: 600;
+}
+
+@media (max-width: 980px) {
+  .dashboard-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 520px) {
+  .dashboard-grid {
+    grid-template-columns: 1fr;
+  }
+}

@@ -1,7 +1,0 @@
-
-> server@1.0.0 start
-> node src/index.js
-
-Server listening at http://localhost:3001
-Connected to MySQL database
-Tablas de datos iniciales listas

@@ -1,0 +1,187 @@
+/* Dashboard de seguimiento historico de camadas. */
+.camadas-dashboard {
+  margin-top: 16px;
+  border: 1px solid #ecc58f;
+  border-radius: 16px;
+  padding: 14px;
+  background: #fff9ef;
+}
+
+.camadas-dashboard-cabecera h3 {
+  margin: 0;
+  color: #3a2416;
+}
+
+.camadas-dashboard-cabecera p {
+  margin: 6px 0 0;
+  color: #6a4b36;
+}
+
+.camadas-seleccion-actual {
+  margin-top: 10px;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 6px 10px;
+  border-radius: 999px;
+  border: 1px solid #e6c89f;
+  background: #fff4dc;
+  color: #4a2f1f;
+}
+
+.camadas-seleccion-etiqueta {
+  font-size: 0.78rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  color: #7a4a26;
+}
+
+.camadas-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 10px;
+  margin-top: 12px;
+}
+
+.camada-card {
+  border: 1px solid #eed5b2;
+  border-radius: 12px;
+  background: #fff;
+}
+
+.camada-card-activa {
+  border-color: #d8822f;
+  box-shadow: 0 0 0 2px rgba(216, 130, 47, 0.18);
+}
+
+.camada-select-btn {
+  width: 100%;
+  border: none;
+  background: transparent;
+  text-align: left;
+  padding: 10px;
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  color: #4a3121;
+}
+
+.camada-select-btn strong {
+  color: #2f1b12;
+}
+
+.seguimiento-form {
+  margin-top: 14px;
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 10px 12px;
+  border: 1px solid #efd9ba;
+  border-radius: 12px;
+  padding: 12px;
+  background: #fffdf8;
+}
+
+.seguimiento-form h4 {
+  margin: 0;
+  grid-column: span 2;
+}
+
+.seguimiento-form label {
+  grid-column: span 2;
+  font-weight: 700;
+  color: #4a2f1f;
+}
+
+.seguimiento-form input,
+.seguimiento-form select,
+.seguimiento-form textarea {
+  grid-column: span 2;
+  border: 1px solid #e6c89f;
+  border-radius: 10px;
+  padding: 10px;
+  font-size: 0.95rem;
+}
+
+.seguimiento-form-acciones {
+  grid-column: span 2;
+  display: flex;
+  gap: 10px;
+}
+
+.seguimiento-btn-principal,
+.seguimiento-btn-secundario,
+.seguimiento-editar-btn {
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  font-weight: 700;
+}
+
+.seguimiento-btn-principal {
+  height: 42px;
+  padding: 0 16px;
+  background: linear-gradient(120deg, #d67a2a 0%, #b34d17 100%);
+  color: #fff;
+}
+
+.seguimiento-btn-secundario {
+  height: 42px;
+  padding: 0 14px;
+  background: #fde7c1;
+  color: #72411d;
+}
+
+.seguimiento-historial {
+  margin-top: 14px;
+}
+
+.seguimiento-historial h4 {
+  margin: 0 0 8px;
+}
+
+.seguimiento-tabla-scroll {
+  overflow-x: auto;
+}
+
+.seguimiento-tabla {
+  width: 100%;
+  min-width: 760px;
+  border-collapse: collapse;
+}
+
+.seguimiento-tabla th,
+.seguimiento-tabla td {
+  border-bottom: 1px solid #ead8be;
+  padding: 8px;
+  text-align: left;
+}
+
+.seguimiento-tabla th {
+  background: #fff0d5;
+}
+
+.seguimiento-editar-btn {
+  padding: 8px 10px;
+  background: #f9ddb0;
+  color: #663611;
+}
+
+.seguimiento-mensaje {
+  margin: 10px 0 0;
+  padding: 10px;
+  border-radius: 10px;
+  background: #fff2dc;
+  color: #6d401d;
+}
+
+.camadas-vacio {
+  margin: 0;
+  color: #6b4c36;
+}
+
+@media (max-width: 900px) {
+  .camadas-grid {
+    grid-template-columns: 1fr;
+  }
+}

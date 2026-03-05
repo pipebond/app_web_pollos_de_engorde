@@ -1,0 +1,189 @@
+/* Modulo para registrar y listar el beneficio del pollo por usuario. */
+.beneficio-bloque {
+  margin-top: 22px;
+  border: 1px solid #edc891;
+  border-radius: 16px;
+  background: #fff9ef;
+  padding: 16px;
+}
+
+.beneficio-cabecera h3 {
+  margin: 0;
+  color: #301c11;
+}
+
+.beneficio-cabecera p {
+  margin: 8px 0 0;
+  color: #674834;
+}
+
+.beneficio-etiqueta {
+  display: inline-block;
+  margin: 0 0 8px;
+  padding: 5px 10px;
+  border-radius: 999px;
+  background: #ffe9c4;
+  color: #7d3f17;
+  font-size: 0.76rem;
+  text-transform: uppercase;
+  font-weight: 700;
+}
+
+.beneficio-formulario {
+  margin-top: 12px;
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 10px 14px;
+}
+
+.beneficio-formulario label {
+  color: #4c3222;
+  font-weight: 700;
+}
+
+.beneficio-formulario input,
+.beneficio-formulario select {
+  height: 42px;
+  border: 1px solid #e2c097;
+  border-radius: 10px;
+  padding: 0 12px;
+  background: #fffcf7;
+}
+
+.beneficio-formulario input:focus,
+.beneficio-formulario select:focus {
+  outline: none;
+  border-color: #f0a347;
+  box-shadow: 0 0 0 3px rgba(240, 163, 71, 0.2);
+}
+
+.beneficio-btn-principal {
+  grid-column: span 2;
+  margin-top: 4px;
+  border: none;
+  border-radius: 10px;
+  height: 42px;
+  color: #fff;
+  background: linear-gradient(120deg, #d67a2a 0%, #b34d17 100%);
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.beneficio-btn-secundario {
+  grid-column: span 2;
+  border: none;
+  border-radius: 10px;
+  height: 42px;
+  color: #6f421f;
+  background: #fde8c4;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.beneficio-mensaje {
+  margin: 12px 0 0;
+  padding: 10px 12px;
+  border-radius: 10px;
+  background: #fff1d8;
+  color: #703f17;
+}
+
+.beneficio-listado {
+  margin-top: 16px;
+}
+
+.beneficio-resumen-grid {
+  margin-bottom: 12px;
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 10px;
+}
+
+.beneficio-resumen-item {
+  border: 1px solid #ecd2ab;
+  border-radius: 10px;
+  background: #fffdf8;
+  padding: 8px 10px;
+}
+
+.beneficio-resumen-item h5 {
+  margin: 0;
+  font-size: 0.78rem;
+  color: #6a4427;
+  text-transform: uppercase;
+}
+
+.beneficio-resumen-item p {
+  margin: 6px 0 0;
+  color: #3a2415;
+  font-weight: 700;
+}
+
+.beneficio-listado h4 {
+  margin: 0 0 10px;
+  color: #3f2718;
+}
+
+.beneficio-tabla-contenedor {
+  overflow-x: auto;
+}
+
+.beneficio-tabla {
+  width: 100%;
+  border-collapse: collapse;
+  min-width: 760px;
+}
+
+.beneficio-tabla th,
+.beneficio-tabla td {
+  border: 1px solid #ebcd9e;
+  padding: 8px 10px;
+  text-align: left;
+}
+
+.beneficio-tabla th {
+  background: #fce7c3;
+  color: #5a3218;
+}
+
+.beneficio-tabla tbody tr:nth-child(even) {
+  background: #fffaef;
+}
+
+.beneficio-tabla-acciones {
+  display: flex;
+  gap: 8px;
+}
+
+.beneficio-tabla-btn {
+  border: none;
+  border-radius: 8px;
+  padding: 7px 10px;
+  background: #fde4bb;
+  color: #6f3e1d;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.beneficio-tabla-btn-eliminar {
+  background: #f8d0c8;
+  color: #7a2516;
+}
+
+@media (max-width: 760px) {
+  .beneficio-resumen-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .beneficio-formulario {
+    grid-template-columns: 1fr;
+  }
+
+  .beneficio-btn-principal {
+    grid-column: span 1;
+  }
+
+  .beneficio-btn-secundario {
+    grid-column: span 1;
+  }
+}

@@ -1,0 +1,125 @@
+/* Vista de registro inspirada en la paleta del login para mantener consistencia. */
+.registro-escena {
+  min-height: 100vh;
+  display: grid;
+  place-items: center;
+  padding: 24px;
+  background: linear-gradient(145deg, #fff4da 0%, #ffe6bf 45%, #ffdca7 100%);
+  font-family: "Space Grotesk", "Trebuchet MS", sans-serif;
+}
+
+.registro-tarjeta {
+  width: min(980px, 100%);
+  background: #fffdf8;
+  border: 1px solid #efc994;
+  border-radius: 24px;
+  padding: 28px;
+  box-shadow: 0 20px 55px rgba(149, 75, 26, 0.2);
+}
+
+.registro-cabecera {
+  margin-bottom: 18px;
+}
+
+.registro-etiqueta {
+  display: inline-block;
+  margin: 0 0 8px;
+  background: #fff2d6;
+  color: #7a3915;
+  border-radius: 999px;
+  padding: 6px 12px;
+  font-size: 0.8rem;
+  font-weight: 700;
+  text-transform: uppercase;
+}
+
+.registro-cabecera h2 {
+  margin: 0 0 8px;
+  color: #2d1b12;
+}
+
+.registro-cabecera p {
+  margin: 0;
+  color: #6a4a35;
+}
+
+.registro-formulario {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 10px 14px;
+  margin-bottom: 12px;
+}
+
+.registro-formulario label {
+  grid-column: span 2;
+  font-size: 0.95rem;
+  font-weight: 700;
+  color: #3f281b;
+}
+
+.registro-formulario input {
+  grid-column: span 2;
+  height: 44px;
+  border: 1px solid #e3c59c;
+  border-radius: 12px;
+  padding: 0 12px;
+  background: #fffcf8;
+}
+
+.registro-formulario input:focus {
+  outline: none;
+  border-color: #f0a348;
+  box-shadow: 0 0 0 3px rgba(240, 163, 72, 0.2);
+}
+
+.registro-acciones {
+  grid-column: span 2;
+  display: flex;
+  gap: 10px;
+  margin-top: 6px;
+}
+
+.registro-btn-principal,
+.registro-btn-secundario {
+  border: none;
+  border-radius: 10px;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.registro-btn-principal {
+  background: linear-gradient(120deg, #d67a2a 0%, #b24b18 100%);
+  color: #fff;
+  height: 44px;
+  padding: 0 18px;
+}
+
+.registro-btn-secundario {
+  background: #fde8c4;
+  color: #6f3f1e;
+  height: 44px;
+  padding: 0 16px;
+}
+
+.registro-mensaje {
+  margin: 6px 0 12px;
+  padding: 10px 12px;
+  border-radius: 10px;
+  background: #fff2dd;
+  color: #724016;
+}
+
+@media (max-width: 760px) {
+  .registro-escena {
+    padding: 14px;
+  }
+
+  .registro-tarjeta {
+    border-radius: 16px;
+    padding: 20px;
+  }
+
+  .registro-acciones {
+    flex-direction: column;
+  }
+}
