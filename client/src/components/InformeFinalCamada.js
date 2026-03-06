@@ -1,10 +1,9 @@
 import React, { useEffect, useMemo, useState } from "react";
 import "./InformeFinalCamada.css";
 import { buildAuthHeaders } from "../utils/auth";
+import { API_BASE_URL } from "../utils/api";
 
 function InformeFinalCamada({ usuarioActivo, onAgregarNuevaCamada }) {
-  const API_BASE_URL = process.env.REACT_APP_API_URL || "http://localhost:3001";
-
   const [camadas, setCamadas] = useState([]);
   const [filtroCamadas, setFiltroCamadas] = useState("");
   const [idCamadaSeleccionada, setIdCamadaSeleccionada] = useState("");

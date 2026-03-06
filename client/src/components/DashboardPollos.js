@@ -1,10 +1,9 @@
 import React, { useCallback, useEffect, useState } from "react";
 import "./DashboardPollos.css";
 import { buildAuthHeaders } from "../utils/auth";
+import { API_BASE_URL } from "../utils/api";
 
 function DashboardPollos({ refreshToken = 0, usuarioActivo }) {
-  const API_BASE_URL = process.env.REACT_APP_API_URL || "http://localhost:3001";
-
   // Estado del resumen principal que se muestra en todas las pantallas.
   const [dashboard, setDashboard] = useState({
     resumen: {
@@ -48,7 +47,7 @@ function DashboardPollos({ refreshToken = 0, usuarioActivo }) {
     } catch (e) {
       setError("No se pudo actualizar el dashboard de pollos.");
     }
-  }, [API_BASE_URL, usuarioActivo]);
+  }, [usuarioActivo]);
 
   useEffect(() => {
     cargarDashboard();

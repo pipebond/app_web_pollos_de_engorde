@@ -1,10 +1,9 @@
 import React, { useCallback, useEffect, useState } from "react";
 import "./CamadasDashboard.css";
 import { buildAuthHeaders } from "../utils/auth";
+import { API_BASE_URL } from "../utils/api";
 
 function CamadasDashboard({ usuarioActivo }) {
-  const API_BASE_URL = process.env.REACT_APP_API_URL || "http://localhost:3001";
-
   const [camadas, setCamadas] = useState([]);
   const [camadaSeleccionada, setCamadaSeleccionada] = useState("");
   const [seguimientos, setSeguimientos] = useState([]);
@@ -53,7 +52,7 @@ function CamadasDashboard({ usuarioActivo }) {
     } catch (error) {
       setMensaje("No se pudo cargar el dashboard de camadas.");
     }
-  }, [API_BASE_URL, camadaSeleccionada, usuarioActivo]);
+  }, [camadaSeleccionada, usuarioActivo]);
 
   const cargarSeguimientos = useCallback(
     async (idCamada) => {
@@ -88,7 +87,7 @@ function CamadasDashboard({ usuarioActivo }) {
         setCargando(false);
       }
     },
-    [API_BASE_URL, usuarioActivo],
+    [usuarioActivo],
   );
 
   useEffect(() => {

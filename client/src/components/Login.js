@@ -1,10 +1,9 @@
 import React, { useState } from "react";
 import "./Login.css";
 import { saveSession } from "../utils/auth";
+import { API_BASE_URL } from "../utils/api";
 
 function Login({ onIrRegistro, onLoginExitoso }) {
-  const API_BASE_URL = process.env.REACT_APP_API_URL || "http://localhost:3001";
-
   // Estado centralizado del formulario para controlar cada campo.
   const [credenciales, setCredenciales] = useState({
     correo: "",

@@ -1,10 +1,9 @@
 import React, { useEffect, useMemo, useState } from "react";
 import "./BeneficioPollo.css";
 import { buildAuthHeaders } from "../utils/auth";
+import { API_BASE_URL } from "../utils/api";
 
 function BeneficioPollo({ usuarioActivo }) {
-  const API_BASE_URL = process.env.REACT_APP_API_URL || "http://localhost:3001";
-
   // Campos solicitados para registrar cada proceso de beneficio.
   const [formulario, setFormulario] = useState({
     id_camada: "",

@@ -1,10 +1,8 @@
 import React, { useState } from "react";
 import "./RegistroUsuario.css";
+import { API_BASE_URL } from "../utils/api";
 
 function RegistroUsuario({ onVolverLogin }) {
-  // URL base del backend para facilitar cambios por entorno.
-  const API_BASE_URL = process.env.REACT_APP_API_URL || "http://localhost:3001";
-
   // Estado del formulario de registro, alineado con columnas del backend.
   const [formulario, setFormulario] = useState({
     nombre_completo: "",

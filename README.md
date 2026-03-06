@@ -103,6 +103,7 @@ Use these templates:
 Minimum required in production:
 
 - Backend (`server/.env`):
+  - `NODE_ENV=production`
   - `PORT`
   - `DB_HOST`
   - `DB_PORT`
@@ -127,14 +128,28 @@ Use it in hosting health checks.
 - Backend: Render/Railway/Fly.io/VPS as a Node service.
 - Frontend: Netlify/Vercel/Render Static Site serving `client/build`.
 
-### 4. Build and Run Commands
+If backend and frontend are deployed under different domains, `REACT_APP_API_URL` and `CLIENT_ORIGIN` are mandatory.
+
+### 4. One-Click Render Blueprint (Recommended)
+
+This repo includes `render.yaml` in the root. You can deploy both services from Render using Blueprint:
+
+1. In Render, select **New +** -> **Blueprint**.
+1. Connect this repository.
+1. Render will read `render.yaml` and propose:
+  - `pollos-backend` (Node Web Service)
+  - `pollos-frontend` (Static Site)
+1. Set secret env vars (`DB_*`, `JWT_SECRET`, `CLIENT_ORIGIN`, `REACT_APP_API_URL`).
+1. Deploy.
+
+### 5. Build and Run Commands
 
 - Backend install: `npm --prefix server install`
 - Backend start: `npm --prefix server start`
 - Frontend install: `npm --prefix client install`
 - Frontend build: `npm --prefix client run build`
 
-### 5. Render Example (Simple)
+### 6. Render Example (Manual)
 
 1. Create a **Web Service** from this repo for backend.
 1. Set root directory to `server`.
@@ -148,10 +163,11 @@ Use it in hosting health checks.
 1. Add `REACT_APP_API_URL` with backend public URL.
 1. Set backend `CLIENT_ORIGIN` to frontend public URL.
 
-### 6. Final Pre-Go-Live Checklist
+### 7. Final Pre-Go-Live Checklist
 
 - `JWT_SECRET` is strong and private.
 - Database user has only required permissions.
 - CORS is restricted to frontend domain.
+- Backend starts on hosting `PORT` without alternate ports in production.
 - Frontend can login and call backend without mixed-content errors.
 - `GET /health` returns `200`.

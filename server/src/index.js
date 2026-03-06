@@ -13,13 +13,20 @@ const informeFinalCamadaRoutes = require("./routes/informeFinalCamadaRoutes");
 
 const app = express();
 const configuredPort = Number(process.env.PORT || 3001);
+const isProduction = process.env.NODE_ENV === "production";
+const configuredOrigins = (process.env.CLIENT_ORIGIN || "")
+  .split(",")
+  .map((origin) => origin.trim())
+  .filter(Boolean);
+
+const corsOrigin = configuredOrigins.length > 0 ? configuredOrigins : isProduction ? false : true;
 
 // Necesario en hosting con proxy (Render, Railway, Nginx) para rate-limit y cabeceras.
 app.set("trust proxy", Number(process.env.TRUST_PROXY || 1));
 
 app.use(
   cors({
-    origin: process.env.CLIENT_ORIGIN || true,
+    origin: corsOrigin,
     credentials: false,
   }),
 );
@@ -62,6 +69,16 @@ app.get("/health", (req, res) => {
 });
 
 const startServer = (initialPort) => {
+  if (isProduction) {
+    app.listen(initialPort, () => {
+      console.log(`Server listening on port ${initialPort}`);
+    }).on("error", (err) => {
+      console.error("No se pudo iniciar el servidor en produccion:", err);
+      process.exit(1);
+    });
+    return;
+  }
+
   const maxAttempts = 20;
   let attempt = 0;
   let currentPort = initialPort;

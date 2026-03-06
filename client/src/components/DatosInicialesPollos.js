@@ -5,10 +5,9 @@ import CamadasDashboard from "./CamadasDashboard";
 import BeneficioPollo from "./BeneficioPollo";
 import InformeFinalCamada from "./InformeFinalCamada";
 import { buildAuthHeaders } from "../utils/auth";
+import { API_BASE_URL } from "../utils/api";
 
 function DatosInicialesPollos({ usuarioActivo, onCerrarSesion }) {
-  const API_BASE_URL = process.env.REACT_APP_API_URL || "http://localhost:3001";
-
   // Formulario principal para registrar datos de una camada.
   const [formulario, setFormulario] = useState({
     nombre_camada: "",
