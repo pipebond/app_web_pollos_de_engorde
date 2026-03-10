@@ -1,15 +1,20 @@
 const mysql = require("mysql2");
 require("dotenv").config();
 
-const connection = mysql.createConnection({
+const connection = mysql.createPool({
   host: process.env.DB_HOST || "localhost",
   user: process.env.DB_USER || "root",
   password: process.env.DB_PASSWORD || "123456",
   database: process.env.DB_NAME || "pollos_de_engorde_db",
   port: process.env.DB_PORT || 3306,
+  waitForConnections: true,
+  connectionLimit: Number(process.env.DB_POOL_SIZE || 10),
+  queueLimit: 0,
+  enableKeepAlive: true,
+  keepAliveInitialDelay: 0,
 });
 
-connection.connect((err) => {
+connection.query("SELECT 1", (err) => {
   if (err) {
     console.error("Error connecting to MySQL:", err);
     return;
